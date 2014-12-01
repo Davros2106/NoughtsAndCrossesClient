@@ -1,0 +1,5 @@
+**.log
+.build/
+.idea/
+bower_components/
+node_modules/
