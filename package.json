@@ -1,0 +1,23 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-less": "^0.12.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-include-replace": "^2.0.0",
+    "grunt-lesslint": "^1.1.13",
+    "jshint": "^2.5.6",
+    "mocha": "^1.21.4",
+    "phantomjs": "^1.9.10"
+  },
+  "dependencies": {
+    "express": "^4.10.1",
+    "morgan": "^1.4.1"
+  }
+}

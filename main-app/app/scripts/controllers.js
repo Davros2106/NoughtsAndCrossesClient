@@ -22,6 +22,16 @@ $scope.gameModel = gameModel;
              });
     };
 
+    $scope.makeMove = function () {
+        serverPost.url = '';
+        serverPost.data = {};
+        $http(serverPost).
+            success(function(data) {
+                $scope.gameModel = data;
+            });
+
+    };
+
 
 });
 
