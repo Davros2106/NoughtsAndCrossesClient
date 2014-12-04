@@ -4,7 +4,7 @@ noughtsAndCrossesApp.factory('gameModel', function($http) {
 
 return {
     outcome: 'continue',
-    gameState: '000000000',
+    gameboard: '000000000',
     winner: 0,
     player1:'random',
     player2:'random',
@@ -31,8 +31,13 @@ return {
 
 
             .success(function (data) {
+                me.gameboard = data.gameboard;
                 me.outcome = data.outcome;
+                me.winner = data.winner;
+
             });
+
+
         }};
 });
 
