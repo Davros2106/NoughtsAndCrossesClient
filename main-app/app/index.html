@@ -12,9 +12,17 @@
 
 <div ng-controller="noughtsAndCrossesController">
 
-    <button ng-click="newGame">Click me</button>
+    <button ng-click="StartNewGame()">New Game</button>
 
-    <p>{{2 + 2}}</p>
+    <button ng-click="makeMove()">makeMove</button>
+
+<h2>{{gameModel.outcome + ' ' + gameModel.gameboard + ' ' + gameModel.winner }}</h2>
+
+
+
+
+
+
 </div>
 
 <script src="scripts/built.js"></script>

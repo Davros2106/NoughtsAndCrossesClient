@@ -2,36 +2,17 @@ noughtsAndCrossesApp.controller('noughtsAndCrossesController', function ($scope,
 
 $scope.gameModel = gameModel;
 
-    var serverPost = {
 
-        method: 'POST',
-        url: '',
-        'withCredentials': 'true',
-        headers: {
-            'content-type': 'application/json'
-        },
-        data: '',
-    };
+$scope.StartNewGame = function() {
+    gameModel.StartNewGame();
+};
 
-    $scope.newGame = function () {
-         serverPost.url = 'http://tictactoe1.cloudapp.net:35002/api/v1.0/newgame';
-         serverPost.data = {'player1':'human', 'player2':'human'};
-         $http(serverPost).
-            success(function (data) {
-               $scope.gameModel = data;
-             });
-    };
-
-    $scope.makeMove = function () {
-        serverPost.url = '';
-        serverPost.data = {};
-        $http(serverPost).
-            success(function(data) {
-                $scope.gameModel = data;
-            });
-
-    };
+$scope.makeMove = function() {
+    gameModel.makeMove();
+};
 
 
 });
+
+
 
