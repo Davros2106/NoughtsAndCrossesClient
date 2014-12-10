@@ -1,18 +1,22 @@
-noughtsAndCrossesApp.controller('noughtsAndCrossesController', function ($scope, $http, gameModel){
+(function () {
+angular.module('noughtsAndCrossesApp')
 
-$scope.gameModel = gameModel;
+    .controller('noughtsAndCrossesController', ['$scope','gameApi', function ($scope,gameApi,gameModel){
 
+    $scope.data ={};
 
-$scope.StartNewGame = function() {
-    gameModel.StartNewGame();
+        $scope.gameModel = gameModel;
+
+$scope.newGame = function() {
+    $scope.data = gameApi.newGame();
 };
 
-$scope.makeMove = function() {
-    gameModel.makeMove();
-};
+}]);
+
+})();
 
 
-});
+
 
 
 

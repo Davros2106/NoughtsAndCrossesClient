@@ -3,7 +3,7 @@
 <head>
 
     <title>Noughts and Crosses</title>
-    <script src="/main-app/angular/angular.min.js"></script>
+    <script src="/angular/angular.min.js"></script>
 
 
 </head>
@@ -12,18 +12,15 @@
 
 <div ng-controller="noughtsAndCrossesController">
 
-    <button ng-click="StartNewGame()">New Game</button>
+    <button ng-click="newGame()">New Game</button>
 
-    <button ng-click="makeMove()">makeMove</button>
+    <button ng-click=''>makeMove</button>
 
-<h2>{{gameModel.outcome + ' ' + gameModel.gameboard + ' ' + gameModel.winner }}</h2>
-
-
-
-
-
+<h2>{{gameModel.outcome}}</h2>
 
 </div>
+
+
 
 <script src="scripts/built.js"></script>
 </body>
