@@ -31,8 +31,14 @@ angular.module('noughtsAndCrossesApp')
 
         this.newGame = function() {
             return callService('http://eutaveg-01.tombola.emea:35000/api/v1.0/newgame',
-                {'player1': 'random', 'player2': 'random'});
+                {'player1': 'human', 'player2': 'human'});
 
+
+        };
+
+        this.makeMove = function() {
+            return callService('http://eutaveg-01.tombola.emea:35000/api/v1.0/makeMove',
+            {'playerNumber': 1, 'chosenSquare': 0});
 
         };
 

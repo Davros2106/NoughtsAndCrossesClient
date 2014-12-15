@@ -8,8 +8,9 @@ angular.module('noughtsAndCrossesApp')
             this.outcome = 'continue';
             this.gameboard = '000000000';
             this.winner = 0;
-
         };
         return model;
+
+
     });
 })();
