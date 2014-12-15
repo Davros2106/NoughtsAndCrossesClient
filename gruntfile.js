@@ -1,11 +1,11 @@
 
-var copyTask = require('./../NoughtsAndCrossesClient copy/.grunt/copytask');
-var cleanTask = require('./../NoughtsAndCrossesClient copy/.grunt/cleantask');
-var jshintTask = require('./../NoughtsAndCrossesClient copy/.grunt/jshinttask');
-var fileWatchTask = require('./../NoughtsAndCrossesClient copy/.grunt/filewatchertask');
-var lessTask = require('./../NoughtsAndCrossesClient copy/.grunt/lesstask');
+var copyTask = require('./../NoughtsAndCrosses/.grunt/copytask.js');
+var cleanTask = require('./../NoughtsAndCrosses/.grunt/cleantask.js');
+var jshintTask = require('./../NoughtsAndCrosses/.grunt/jshinttask.js');
+var fileWatchTask = require('./../NoughtsAndCrosses/.grunt/filewatchertask.js');
+var lessTask = require('./../NoughtsAndCrosses/.grunt/lesstask.js');
 var expressTask = require('./server/server.js');
-var concatTask = require('./../NoughtsAndCrossesClient copy/.grunt/concatTask.js');
+var concatTask = require('./../NoughtsAndCrosses/.grunt/concatTask.js');
 
 module.exports = function(grunt) {
 
