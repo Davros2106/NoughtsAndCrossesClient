@@ -2,11 +2,10 @@
     'use strict';
 angular.module('noughtsAndCrossesApp')
 
-.service('gameApi',['$http', function($http) {
+.service('gameApi',['$http', 'gameModel', function($http, gameModel) {
 
 
     var GameApi = function () {
-        var me = this;
 
 
         var callService= function (url, data){
@@ -22,15 +21,18 @@ angular.module('noughtsAndCrossesApp')
 
             $http(serverPost)
                 .success(function (data) {
-                    return data;
+                    gameModel.gameboard = data.gameboard;
+                    gameModel.outcome = data.outcome;
+                    gameModel.winner = data.winner;
 
                 });
         };
 
 
-        me.newGame = function(){
+        this.newGame = function() {
             return callService('http://eutaveg-01.tombola.emea:35000/api/v1.0/newgame',
                 {'player1': 'random', 'player2': 'random'});
+
 
         };
 
