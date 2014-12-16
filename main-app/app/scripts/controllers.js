@@ -4,17 +4,18 @@ angular.module('noughtsAndCrossesApp')
     .controller('noughtsAndCrossesController', ['$scope','gameApi', 'gameModel', function ($scope,gameApi,gameModel){
 
 $scope.data = {};
-
+$scope.gameApi = gameApi;
         $scope.gameModel = gameModel;
 
 
 
 $scope.newGame = function() {
-    $scope.data = gameApi.newGame();
+    $scope.data = gameApi.newGame($scope);
 
-    $scope.makeMove = function() {
-        $scope.data = gameApi.makeMove($scope.playerNumber, $scope.chosenSquare);
+    $scope.makeMove = function(chosenSquare) {
+        $scope.data = gameApi.makeMove($scope.playerNumber, chosenSquare);
     };
+
 
 };
 
