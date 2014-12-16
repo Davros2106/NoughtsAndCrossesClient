@@ -8,7 +8,7 @@ angular.module('noughtsAndCrossesApp')
     var GameApi = function () {
 
 
-        var callService= function (url, data){
+        var callService = function (url, data) {
             var serverPost = {
                 method: 'POST',
                 url: url,
@@ -25,23 +25,28 @@ angular.module('noughtsAndCrossesApp')
                     gameModel.outcome = data.outcome;
                     gameModel.winner = data.winner;
 
+                })
+                .error(function (data) {
+                    console.log('error');
+                    console.log(data);
+
                 });
+
         };
 
 
-        this.newGame = function() {
+        this.newGame = function () {
             return callService('http://eutaveg-01.tombola.emea:35000/api/v1.0/newgame',
                 {'player1': 'human', 'player2': 'human'});
 
 
         };
 
-        this.makeMove = function(playerNumber, chosenSquare) {
+        this.makeMove = function (playerNumber, chosenSquare) {
             return callService('http://eutaveg-01.tombola.emea:35000/api/v1.0/makeMove',
-            {'playerNumber': playerNumber, 'chosenSquare': chosenSquare});
+                {'playerNumber': playerNumber, 'chosenSquare': chosenSquare});
 
         };
-
 
     };
 
