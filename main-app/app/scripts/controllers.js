@@ -13,7 +13,7 @@ $scope.newGame = function() {
     $scope.data = gameApi.newGame();
 
     $scope.makeMove = function() {
-        $scope.data = gameApi.makeMove();
+        $scope.data = gameApi.makeMove($scope.playerNumber, $scope.chosenSquare);
     };
 
 };
