@@ -10,7 +10,7 @@ $scope.gameApi = gameApi;
 
 
 $scope.newGame = function() {
-    $scope.data = gameApi.newGame($scope);
+    $scope.data = gameApi.newGame($scope.playerType1, $scope.playerType2);
 
     $scope.makeMove = function(chosenSquare) {
         $scope.data = gameApi.makeMove($scope.playerNumber, chosenSquare);

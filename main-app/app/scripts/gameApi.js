@@ -35,9 +35,9 @@ angular.module('noughtsAndCrossesApp')
         };
 
 
-        this.newGame = function () {
+        this.newGame = function (playerType1, playerType2) {
             return callService('http://eutaveg-01.tombola.emea:35000/api/v1.0/newgame',
-                {'player1': 'human', 'player2': 'human'});
+                {'player1': playerType1, 'player2': playerType2 });
 
 
         };
