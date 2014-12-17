@@ -1,3 +1,5 @@
+@spriteSize: 200px, 200px;
+
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -5,48 +7,28 @@
 .gameboard {
   width: 800px;
   height:800px;
-  border:3px solid white;
-  z-index: 1;
-
 }
 
 .wrapper {
   width: 800px;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
-.button {
-
-  background-color:white;
-  width: 160px;
-  margin:0 auto;
-
-}
-
-.row1, .row2, .row3 {
-  clear:both;
-
-}
-
-#cell1,#cell2,#cell3 {
-  width:200px;
-  height:200px;
-  border:3px solid blue;
+.gameCell{
+  background:url(/images/Terminator%20sprite.png) 0 0;
+  background-size: 600px 200px;
+  height: 199px;
+  width: 199px;
+  border: 1px solid blue;
   float: left;
 
-}
-
-#cell4,#cell5,#cell6 {
-  width:200px;
-  height:200px;
-  float: left;
-  border:3px solid blue;
-}
-
-#cell7,#cell8,#cell9 {
-  width:200px;
-  height:200px;
-  float: left;
-  border:3px solid blue;
+  &.showImg1{
+    background-position:  -198px 0;
 
 }
+
+  &.showImg2{
+   background-position: -398px 0;
+
+}
+};
