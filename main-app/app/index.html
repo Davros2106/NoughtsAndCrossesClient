@@ -8,9 +8,11 @@
 </head>
 
 <body ng-controller="noughtsAndCrossesController">
+
+
 <img src="/images/text.png">
 <div id="contentContainer">
-
+    <h1>{{gameModel}}</h1>
     <div id="wrapper">
             <div>
                 <div  class="gameCell showImg{{gameModel.gameboard[0]}}" ng-click="makeMove(0)"></div>
@@ -50,7 +52,7 @@
 
     <h2>ARNIE!</h2>
 
-    <select ng-model="playerType1">
+    <select ng-model="player1">
 
         <option value="human">Human</option>
         <option value="random">Random</option>
@@ -64,7 +66,7 @@
 
     <h2>T-800 Terminator</h2>
 
-    <select ng-model="playerType2">
+    <select ng-model="player2">
 
         <option value="human">Human</option>
         <option value="random">Random</option>
