@@ -8,11 +8,11 @@
 </head>
 
 <body ng-controller="noughtsAndCrossesController">
-
+<h1>{{gameModel}}</h1>
 
 <img src="/images/text.png">
 <div id="contentContainer">
-    <h1>{{gameModel}}</h1>
+
     <div id="wrapper">
             <div>
                 <div  class="gameCell showImg{{gameModel.gameboard[0]}}" ng-click="makeMove(0)"></div>

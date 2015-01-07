@@ -13,13 +13,16 @@ angular.module('noughtsAndCrossesApp')
         };
 
         this.changeCurrentPlayer = function(){
-            if(this.player1 !== 'human') {
+            var me = this;
+
+            if(me.player1 !== 'human') {
                 return;
             }
-            if(this.player2 !== 'human') {
+            if(me.player2 !== 'human') {
                 return;
             }
-            this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
+            me.currentPlayer = me.currentPlayer === 1 ? 2 : 1;
+
         };
 
 
