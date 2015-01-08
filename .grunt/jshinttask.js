@@ -30,7 +30,7 @@ module.exports =  {
 
     services: {
         cwd: '',
-        src: 'main-app/app/scripts/services',
+        src: 'main-app/app/scripts/providers',
         dest: '.build/',
         expand: true
     }

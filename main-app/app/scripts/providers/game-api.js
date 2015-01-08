@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-angular.module('noughtsAndCrossesApp')
+angular.module('tombola.noughtsAndCrosses')
 
 .service('gameApi',['$http', 'gameModel', function($http, gameModel) {
 

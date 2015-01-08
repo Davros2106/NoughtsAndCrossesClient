@@ -1,6 +1,4 @@
 module.exports =  {
-
-
     all: ['.build'],
     scripts: ['.build/main-app/app/scripts'],
     images: ['.build/main-app/app/images'],

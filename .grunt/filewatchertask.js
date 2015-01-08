@@ -2,7 +2,7 @@
 module.exports =  {
 
     scripts: {
-        files:'main-app/app/scripts/*.js',
+        files:'main-app/app/scripts/**/*.js',
         tasks:['jshint','clean:scripts','concat:scripts'],
         options:{
             spawn:false
@@ -50,7 +50,7 @@ module.exports =  {
     },
 
     services:{
-        files:'main-app/app/scripts/services/*',
+        files:'main-app/app/scripts/providers/*',
         tasks:['nostart'],
         options:{
             spawn:false

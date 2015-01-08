@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="noughtsAndCrossesApp">
+<html ng-app="tombola.noughtsAndCrosses">
 <head>
 
     <title>Noughts and Crosses</title>
@@ -8,8 +8,6 @@
 </head>
 
 <body ng-controller="noughtsAndCrossesController">
-<h1>{{gameModel}}</h1>
-
 <img src="/images/text.png">
 <div id="contentContainer">
 
@@ -37,22 +35,15 @@
 
 <div class="selection">
 
-    <h2>Player Number</h2>
-
-    <select ng-model="playerNumber">
-
-        <option value="1">1</option>
-        <option value="2">2</option>
-
-    </select>
+    <h2>Current Number {{gameModel.currentPlayer}}</h2>
 
 </div>
 
 <div class="selection">
 
-    <h2>ARNIE!</h2>
+    <h2>ARNIE!  {{gameModel.player1Type}}</h2>
 
-    <select ng-model="player1">
+    <select ng-model="gameModel.player1Type">
 
         <option value="human">Human</option>
         <option value="random">Random</option>
@@ -64,9 +55,9 @@
 
 <div class="selection">
 
-    <h2>T-800 Terminator</h2>
+    <h2>T-800 Terminator {{gameModel.player2Type}}</h2>
 
-    <select ng-model="player2">
+    <select ng-model="gameModel.player2Type">
 
         <option value="human">Human</option>
         <option value="random">Random</option>

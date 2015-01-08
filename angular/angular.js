@@ -165,7 +165,7 @@ function minErr(module, ErrorConstructor) {
  * # ng (core module)
  * The ng module is loaded by default when an AngularJS application is started. The module itself
  * contains the essential components for an AngularJS application to function. The table below
- * lists a high level breakdown of each of the services/factories, filters, directives and testing
+ * lists a high level breakdown of each of the providers/factories, filters, directives and testing
  * components available within this core module.
  *
  * <div doc-module-components="ng"></div>
@@ -1697,7 +1697,7 @@ function setupModuleLoader(window) {
      *
      * # Module
      *
-     * A module is a collection of services, directives, controllers, filters, and configuration information.
+     * A module is a collection of providers, directives, controllers, filters, and configuration information.
      * `angular.module` is used to configure the {@link auto.$injector $injector}.
      *
      * ```js
@@ -1707,7 +1707,7 @@ function setupModuleLoader(window) {
      * // register a new service
      * myModule.value('appName', 'MyCoolApp');
      *
-     * // configure existing services inside initialization blocks.
+     * // configure existing providers inside initialization blocks.
      * myModule.config(['$locationProvider', function($locationProvider) {
      *   // Configure existing providers
      *   $locationProvider.hashPrefix('!');
@@ -1924,7 +1924,7 @@ function setupModuleLoader(window) {
            *    configuration.
            * @description
            * Use this method to register work which needs to be performed on module loading.
-           * For more about how to configure services, see
+           * For more about how to configure providers, see
            * {@link providers#provider-recipe Provider Recipe}.
            */
           config: config,
@@ -3324,7 +3324,7 @@ HashMap.prototype = {
  * @kind function
  *
  * @description
- * Creates an injector object that can be used for retrieving services as well as for
+ * Creates an injector object that can be used for retrieving providers as well as for
  * dependency injection (see {@link guide/di dependency injection}).
  *
  * @param {Array.<string|Function>} modules A list of module functions or their aliases. See
@@ -3545,7 +3545,7 @@ function annotate(fn, strictDi, name) {
  *
  * @description
  * Returns an array of service names which the function is requesting for injection. This API is
- * used by the injector to determine which services need to be injected into the function when the
+ * used by the injector to determine which providers need to be injected into the function when the
  * function is invoked. There are three ways in which the function can be annotated with the needed
  * dependencies.
  *
@@ -3572,7 +3572,7 @@ function annotate(fn, strictDi, name) {
  * # The `$inject` property
  *
  * If a function has an `$inject` property and its value is an array of strings, then the strings
- * represent names of services to be injected into the function.
+ * represent names of providers to be injected into the function.
  * ```js
  *   // Given
  *   var MyController = function(obfuscatedScope, obfuscatedRoute) {
@@ -3620,7 +3620,7 @@ function annotate(fn, strictDi, name) {
  *
  * @param {boolean=} [strictDi=false] Disallow argument name annotation inference.
  *
- * @returns {Array.<string>} The names of the services which the function requires.
+ * @returns {Array.<string>} The names of the providers which the function requires.
  */
 
 
@@ -3645,17 +3645,17 @@ function annotate(fn, strictDi, name) {
  * correct **service provider**, instantiating it and then calling its `$get` **service factory**
  * function to get the instance of the **service**.
  *
- * Often services have no configuration options and there is no need to add methods to the service
+ * Often providers have no configuration options and there is no need to add methods to the service
  * provider.  The provider will be no more than a constructor function with a `$get` property. For
  * these cases the {@link auto.$provide $provide} service has additional helper methods to register
- * services without specifying a provider.
+ * providers without specifying a provider.
  *
  * * {@link auto.$provide#provider provider(provider)} - registers a **service provider** with the
  *     {@link auto.$injector $injector}
  * * {@link auto.$provide#constant constant(obj)} - registers a value/object that can be accessed by
- *     providers and services.
+ *     providers and providers.
  * * {@link auto.$provide#value value(obj)} - registers a value/object that can only be accessed by
- *     services, not providers.
+ *     providers, not providers.
  * * {@link auto.$provide#factory factory(fn)} - registers a service **factory function**, `fn`,
  *     that will be wrapped in a **service provider** object, whose `$get` property will contain the
  *     given factory function.
@@ -3847,7 +3847,7 @@ function annotate(fn, strictDi, name) {
  * provider's `$get` property is a factory function that takes no arguments and returns the **value
  * service**.
  *
- * Value services are similar to constant services, except that they cannot be injected into a
+ * Value providers are similar to constant providers, except that they cannot be injected into a
  * module configuration function (see {@link angular.Module#config}) but they can be overridden by
  * an Angular
  * {@link auto.$provide#decorator decorator}.
@@ -3857,7 +3857,7 @@ function annotate(fn, strictDi, name) {
  * @returns {Object} registered provider instance
  *
  * @example
- * Here are some examples of creating value services.
+ * Here are some examples of creating value providers.
  * ```js
  *   $provide.value('ADMIN_USER', 'admin');
  *
@@ -13477,8 +13477,8 @@ function $RootScopeProvider() {
      *
      * @param {Object.<string, function()>=} providers Map of service factory which need to be
      *                                       provided for the current scope. Defaults to {@link ng}.
-     * @param {Object.<string, *>=} instanceCache Provides pre-instantiated services which should
-     *                              append/override services provided by `providers`. This is handy
+     * @param {Object.<string, *>=} instanceCache Provides pre-instantiated providers which should
+     *                              append/override providers provided by `providers`. This is handy
      *                              when unit-testing and having the need to override a default
      *                              service.
      * @returns {Object} Newly created scope.
@@ -14816,7 +14816,7 @@ function adjustMatchers(matchers) {
  * @description
  *
  * `$sceDelegate` is a service that is used by the `$sce` service to provide {@link ng.$sce Strict
- * Contextual Escaping (SCE)} services to AngularJS.
+ * Contextual Escaping (SCE)} providers to AngularJS.
  *
  * Typically, you would configure or override the {@link ng.$sceDelegate $sceDelegate} instead of
  * the `$sce` service to customize the way Strict Contextual Escaping works in AngularJS.  This is
@@ -15145,7 +15145,7 @@ function $SceDelegateProvider() {
  *
  * @description
  *
- * `$sce` is a service that provides Strict Contextual Escaping services to AngularJS.
+ * `$sce` is a service that provides Strict Contextual Escaping providers to AngularJS.
  *
  * # Strict Contextual Escaping
  *
@@ -20141,7 +20141,7 @@ is set to `true`. The parse error is stored in `ngModel.$error.parse`.
  * @description
  *
  * `NgModelController` provides API for the {@link ngModel `ngModel`} directive.
- * The controller contains services for data-binding, validation, CSS updates, and value formatting
+ * The controller contains providers for data-binding, validation, CSS updates, and value formatting
  * and parsing. It purposefully does not contain any logic which deals with DOM rendering or
  * listening to DOM events.
  * Such DOM related logic should be provided by other directives which make use of
@@ -20475,7 +20475,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
    * input field will be updated with the new model value and any pending operations are cancelled.
    *
    * <example name="ng-model-cancel-update" module="cancel-update-example">
-   *   <file name="app.js">
+   *   <file name="modules.js">
    *     angular.module('cancel-update-example', [])
    *
    *     .controller('CancelUpdateController', ['$scope', function($scope) {
@@ -21005,7 +21005,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
          <pre>user.name = <span ng-bind="user.name()"></span></pre>
        </div>
      </file>
-     <file name="app.js">
+     <file name="modules.js">
        angular.module('getterSetterExample', [])
          .controller('ExampleController', ['$scope', function($scope) {
            var _name = 'Brian';
@@ -21268,7 +21268,7 @@ var minlengthDirective = function() {
  * ### Example with Validation
  *
  * <example name="ngList-directive" module="listExample">
- *   <file name="app.js">
+ *   <file name="modules.js">
  *      angular.module('listExample', [])
  *        .controller('ExampleController', ['$scope', function($scope) {
  *          $scope.names = ['morpheus', 'neo', 'trinity'];
@@ -21515,7 +21515,7 @@ var ngValueDirective = function() {
         <pre>user.name = <span ng-bind="user.name"></span></pre>
       </div>
     </file>
-    <file name="app.js">
+    <file name="modules.js">
       angular.module('optionsExample', [])
         .controller('ExampleController', ['$scope', function($scope) {
           $scope.user = { name: 'say', data: '' };
@@ -21567,7 +21567,7 @@ var ngValueDirective = function() {
         <pre>user.name = <span ng-bind="user.name"></span></pre>
       </div>
     </file>
-    <file name="app.js">
+    <file name="modules.js">
       angular.module('optionsExample', [])
         .controller('ExampleController', ['$scope', function($scope) {
           $scope.user = { name: 'say' };
@@ -21589,7 +21589,7 @@ var ngValueDirective = function() {
         <pre>user.name = <span ng-bind="user.name()"></span></pre>
       </div>
     </file>
-    <file name="app.js">
+    <file name="modules.js">
       angular.module('getterSetterExample', [])
         .controller('ExampleController', ['$scope', function($scope) {
           var _name = 'Brian';
@@ -22433,7 +22433,7 @@ var ngCloakDirective = ngDirective({
  *     </ul>
  *    </div>
  *   </file>
- *   <file name="app.js">
+ *   <file name="modules.js">
  *    angular.module('controllerAsExample', [])
  *      .controller('SettingsController1', SettingsController1);
  *
@@ -22516,7 +22516,7 @@ var ngCloakDirective = ngDirective({
  *    </ul>
  *   </div>
  *  </file>
- *  <file name="app.js">
+ *  <file name="modules.js">
  *   angular.module('controllerExample', [])
  *     .controller('SettingsController2', ['$scope', SettingsController2]);
  *
