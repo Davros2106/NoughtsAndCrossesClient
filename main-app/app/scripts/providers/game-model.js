@@ -9,10 +9,12 @@ angular.module('tombola.noughtsAndCrosses')
         this.winner = 0;
         this.currentPlayer = 1;
         this.player1Type = 'human';
-        this.player2Type = 'random';
+        this.player2Type = 'human';
 
-        var changeCurrentPlayer = function(){
+
+        this.changeCurrentPlayer = function(){
             var me = this;
+
 
             if(me.player1Type !== 'human') {
                 return;
@@ -26,10 +28,19 @@ angular.module('tombola.noughtsAndCrosses')
 
 
         this.newGame = function(){
-            //TODO: intialise who is playing first
-        //    updateBoard(gameApi.newGame(me.player1Type, me.player2Type));
-        //}
 
-        // this.makeMove //Also - change the current player....
+            var me = this;
+
+            if(me.player1Type === 'human') {
+                this.currentPlayer = 1;
+            }
+
+
+            else if (me.player2Type === 'human') {
+                this.currentPlayer = 2;
+            }
+
+        };
+
     });
 })();

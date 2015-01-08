@@ -6,11 +6,12 @@ angular.module('tombola.noughtsAndCrosses')
         console.log ($scope.gameModel);
 
         $scope.newGame = function() {
-            gameModel.newGame();
+            gameApi.newGame(gameModel.player1Type, gameModel.player2Type);
         };
 
         $scope.makeMove = function (chosenSquare) {
-            gameModel.makeMove();
+            gameApi.makeMove(chosenSquare);
+            gameModel.changeCurrentPlayer();
 
         };
     }]);
