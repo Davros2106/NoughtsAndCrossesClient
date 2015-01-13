@@ -1,27 +1,20 @@
 (function () {
-angular.module('noughtsAndCrossesApp')
-
+angular.module('tombola.noughtsAndCrosses')
     .controller('noughtsAndCrossesController', ['$scope','gameApi', 'gameModel', function ($scope,gameApi,gameModel){
 
-$scope.data = {};
-$scope.gameApi = gameApi;
         $scope.gameModel = gameModel;
+        console.log ($scope.gameModel);
 
+        $scope.newGame = function() {
+            gameApi.newGame(gameModel.player1Type, gameModel.player2Type);
+        };
 
+        $scope.makeMove = function (chosenSquare) {
+            gameApi.makeMove(chosenSquare);
+            gameModel.changeCurrentPlayer();
 
-$scope.newGame = function() {
-    $scope.data = gameApi.newGame($scope.playerType1, $scope.playerType2);
-
-    $scope.makeMove = function(chosenSquare) {
-        $scope.data = gameApi.makeMove($scope.playerNumber, chosenSquare);
-    };
-
-
-};
-
-
-}]);
-
+        };
+    }]);
 })();
 
 

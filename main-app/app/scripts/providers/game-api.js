@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-angular.module('noughtsAndCrossesApp')
+angular.module('tombola.noughtsAndCrosses')
 
 .service('gameApi',['$http', 'gameModel', function($http, gameModel) {
 
@@ -35,16 +35,17 @@ angular.module('noughtsAndCrossesApp')
         };
 
 
-        this.newGame = function (playerType1, playerType2) {
+        this.newGame = function (player1Type, player2Type) {
             return callService('http://eutaveg-01.tombola.emea:35000/api/v1.0/newgame',
-                {'player1': playerType1, 'player2': playerType2 });
+                {'player1': player1Type, 'player2': player2Type });
 
 
         };
 
-        this.makeMove = function (playerNumber, chosenSquare) {
+        this.makeMove = function (chosenSquare) {
+
             return callService('http://eutaveg-01.tombola.emea:35000/api/v1.0/makeMove',
-                {'playerNumber': playerNumber, 'chosenSquare': chosenSquare});
+                {'playerNumber': gameModel.currentPlayer, 'chosenSquare': chosenSquare});
 
         };
 
