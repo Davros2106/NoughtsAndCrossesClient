@@ -3,10 +3,10 @@
 angular.module('tombola.noughtsAndCrosses')
 
 .service('gameApi',function($q, $http, gameModel) {
-        console.log($q);
+
 
     var GameApi = function () {
-        console.log('******Get Data Start******');
+
 
         var callService = function (url, data) {
             var serverPost = {
@@ -24,10 +24,10 @@ angular.module('tombola.noughtsAndCrosses')
 
             $http(serverPost)
                 .success(function (data) {
-                    console.log('******Data returned: Success******');
+
                     deferred.resolve(data);
                     gameModel.gameboard = data.gameboard;
-                    gameModel.winner = data.winner;
+
 
 
                 })
@@ -35,10 +35,10 @@ angular.module('tombola.noughtsAndCrosses')
                     deferred.reject();
                     console.log('data: ' + data);
                     console.log('status: ' + status);
-                    console.log('******Data returned: Failed******');
+
 
                 });
-                    console.log('******Get Data End******');
+
 
             return deferred.promise;
         };
