@@ -3,14 +3,14 @@
 <head>
 
     <title>Noughts and Crosses</title>
-    <script src="/angular/angular.min.js"></script>
+    <script src="/angular/angular.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/import.min.css">
 </head>
 
 <body ng-controller="noughtsAndCrossesController">
 <img src="/images/text.png">
 <div id="contentContainer">
-
+{{gameModel}}
     <div id="wrapper">
             <div>
                 <div  class="gameCell showImg{{gameModel.gameboard[0]}}" ng-click="makeMove(0)"></div>

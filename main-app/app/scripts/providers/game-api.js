@@ -2,11 +2,11 @@
     'use strict';
 angular.module('tombola.noughtsAndCrosses')
 
-.service('gameApi',['$http', 'gameModel', function($http, gameModel) {
-
+.service('gameApi',function($q, $http, gameModel) {
+        console.log($q);
 
     var GameApi = function () {
-
+        console.log('******Get Data Start******');
 
         var callService = function (url, data) {
             var serverPost = {
@@ -19,19 +19,28 @@ angular.module('tombola.noughtsAndCrosses')
                 }
             };
 
+            var deferred = $q.defer();
+
+
             $http(serverPost)
                 .success(function (data) {
+                    console.log('******Data returned: Success******');
+                    deferred.resolve(data);
                     gameModel.gameboard = data.gameboard;
-                    gameModel.outcome = data.outcome;
                     gameModel.winner = data.winner;
 
+
                 })
-                .error(function (data) {
-                    console.log('error');
-                    console.log(data);
+                .error(function (data, status) {
+                    deferred.reject();
+                    console.log('data: ' + data);
+                    console.log('status: ' + status);
+                    console.log('******Data returned: Failed******');
 
                 });
+                    console.log('******Get Data End******');
 
+            return deferred.promise;
         };
 
 
@@ -55,7 +64,7 @@ angular.module('tombola.noughtsAndCrosses')
 
 
 
-}]);
+});
 
 })();
 
