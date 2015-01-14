@@ -14,6 +14,9 @@ angular.module('tombola.noughtsAndCrosses')
             gameModel.changeCurrentPlayer();
 
         };
+
+        var updateModel = {}; //TODO: need to create an update .then //
+
     }]);
 })();
 
