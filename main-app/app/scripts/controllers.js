@@ -7,6 +7,7 @@ angular.module('tombola.noughtsAndCrosses')
 
         $scope.newGame = function() {
             gameApi.newGame(gameModel.player1Type, gameModel.player2Type);
+            gameModel.startingPlayers();
         };
 
         $scope.makeMove = function (chosenSquare) {
