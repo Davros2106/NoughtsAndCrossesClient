@@ -27,7 +27,7 @@ angular.module('tombola.noughtsAndCrosses')
         };
 
 
-        this.newGame = function(){
+        this.startingPlayers = function(){
 
             var me = this;
 
