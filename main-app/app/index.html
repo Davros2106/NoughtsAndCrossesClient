@@ -10,7 +10,7 @@
 <body ng-controller="noughtsAndCrossesController">
 <img src="/images/text.png">
 <div id="contentContainer">
-<div>Player {{gameModel.winner}} {{gameModel.outcome}}</div>
+
     <div id="wrapper">
             <div>
                 <div  class="gameCell showImg{{gameModel.gameboard[0]}}" ng-click="makeMove(0)"></div>
@@ -66,6 +66,8 @@
     </select>
 
 </div>
+
+    <h1 ng-hide=" gameModel.winner === 0 ">Player {{gameModel.winner}} {{gameModel.outcome}}</h1>
 
 </aside>
 </div>
