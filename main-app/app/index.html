@@ -41,7 +41,7 @@
 
 <div class="selection">
 
-    <h2>ARNIE!  {{gameModel.player1Type}}</h2>
+    <h2>ARNIE! :  {{gameModel.player1Type}}</h2>
 
     <select ng-model="gameModel.player1Type">
 
@@ -55,7 +55,7 @@
 
 <div class="selection">
 
-    <h2>T-800 Terminator {{gameModel.player2Type}}</h2>
+    <h2>T-800 Terminator : {{gameModel.player2Type}}</h2>
 
     <select ng-model="gameModel.player2Type">
 
@@ -68,6 +68,7 @@
 </div>
 
     <h1 ng-hide=" gameModel.winner === 0 ">Player {{gameModel.winner}} {{gameModel.outcome}}</h1>
+    <h1 ng-show=" gameModel.outcome  === 'Draw'">DRAW</h1>
 
 </aside>
 </div>
