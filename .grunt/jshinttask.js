@@ -28,11 +28,19 @@ module.exports =  {
 
     },
 
+    directives: {
+        cwd: '',
+        src: 'main-app/app/scripts/directives',
+        dest: '.build/',
+        expand: true
+    },
+
     services: {
         cwd: '',
         src: 'main-app/app/scripts/providers',
         dest: '.build/',
         expand: true
-    }
+    },
+
 
 };
