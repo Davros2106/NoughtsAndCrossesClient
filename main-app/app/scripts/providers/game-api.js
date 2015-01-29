@@ -26,11 +26,6 @@ angular.module('tombola.noughtsAndCrosses')
                 .success(function (data) {
 
                     deferred.resolve(data);
-                    gameModel.outcome = data.outcome;
-                    gameModel.winner = data.winner;
-                    gameModel.gameboard = data.gameboard;
-
-
 
                 })
                 .error(function (data, status) {
