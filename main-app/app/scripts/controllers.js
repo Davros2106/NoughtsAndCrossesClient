@@ -16,7 +16,18 @@ angular.module('tombola.noughtsAndCrosses')
 
         };
 
-        var updateModel = {}; //TODO: need to create an update .then //
+        $scope.updateModel = function(promise){
+            promise.then(function(data) {
+
+                $scope.gameModel.updateModel(data);
+
+            }, function(err) {
+
+                console.log(err);
+
+            });
+
+        };
 
     }]);
 })();

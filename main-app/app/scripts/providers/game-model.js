@@ -42,5 +42,15 @@ angular.module('tombola.noughtsAndCrosses')
 
         };
 
+        this.updateModel = function(data){
+
+            gameModel.outcome = data.outcome;
+            gameModel.winner = data.winner;
+            gameModel.gameboard = data.gameboard;
+
+        };
+
+
+
     });
 })();
