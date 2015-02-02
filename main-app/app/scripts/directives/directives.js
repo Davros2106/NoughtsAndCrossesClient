@@ -8,7 +8,7 @@
                 replace: true,
                 template: function (scope, attr) {
 
-                    return '<div class="gameCell showImg{{gameModel.gameboard[' +attr.cellnumber+ ']}}" ng-click="makeMove(' +attr.cellnumber+ ')"></div>';
+                    return '<div class="gameCell showImg{{gameModel.gameboard['+attr.cellnumber+']}}" ng-click="makeMove('+attr.cellnumber+')">';
                 }
 
             };
