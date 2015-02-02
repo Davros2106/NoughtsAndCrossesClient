@@ -49,9 +49,23 @@ angular.module('tombola.noughtsAndCrosses')
             me.outcome = data.outcome;
             me.winner = data.winner;
             me.gameboard = data.gameboard;
+
         };
 
+        this.result1 = function() {
 
+           if(this.winner === '1'){
+               return this.winner;
+           }
+           else if(this.outcome === 'draw'){
+               return('3');
+           }
+           else{
+               return this.winner;
+           }
+
+        };
 
     });
+
 })();

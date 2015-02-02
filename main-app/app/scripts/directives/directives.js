@@ -13,5 +13,20 @@
 
             };
 
-        });
+        })
+
+        .directive('gameResult', function () {
+        return {
+            restrict: 'E',
+            replace: true,
+            template: function () {
+
+                return '<div class="resultDisplay showResult{{gameModel.result1()}}">';
+            }
+
+        };
+
+    });
 })();
+
+
