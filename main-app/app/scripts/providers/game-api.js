@@ -7,7 +7,6 @@ angular.module('tombola.noughtsAndCrosses')
 
     var GameApi = function () {
 
-
         var callService = function (url, data) {
             var serverPost = {
                 method: 'POST',
@@ -26,11 +25,6 @@ angular.module('tombola.noughtsAndCrosses')
                 .success(function (data) {
 
                     deferred.resolve(data);
-                    gameModel.outcome = data.outcome;
-                    gameModel.winner = data.winner;
-                    gameModel.gameboard = data.gameboard;
-
-
 
                 })
                 .error(function (data, status) {
