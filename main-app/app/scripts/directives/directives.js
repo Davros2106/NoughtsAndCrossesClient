@@ -21,7 +21,7 @@
             replace: true,
             template: function () {
 
-                return '<div class="resultDisplay showResult{{gameModel.result1()}}">';
+                return '<div class="resultDisplay showResult{{gameModel.getResultSprite()}}">';
             }
 
         };

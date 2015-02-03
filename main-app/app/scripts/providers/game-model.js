@@ -52,7 +52,7 @@ angular.module('tombola.noughtsAndCrosses')
 
         };
 
-        this.result1 = function() {
+        this.getResultSprite = function() {
 
            if(this.winner === '1'){
                return this.winner;
