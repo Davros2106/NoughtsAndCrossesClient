@@ -1,6 +1,6 @@
 (function () {
 angular.module('tombola.noughtsAndCrosses')
-    .controller('noughtsAndCrossesController', ['$scope','gameApi', 'gameModel', function ($scope,gameApi,gameModel){
+    .controller('noughtsAndCrossesController', ['$scope','gameApi', 'gameModel','audioService', function ($scope,gameApi,gameModel, audioService){
 
         $scope.gameModel = gameModel;
 
@@ -12,6 +12,7 @@ angular.module('tombola.noughtsAndCrosses')
         $scope.makeMove = function (chosenSquare) {
            updateGameModel(gameApi.makeMove(chosenSquare));
             gameModel.changeCurrentPlayer();
+            audioService.makeMove();
         };
 
         var updateGameModel = function(promise){
