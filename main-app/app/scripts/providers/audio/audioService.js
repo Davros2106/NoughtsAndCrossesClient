@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('tombola.noughtsAndCrosses')
+    angular.module('tombola.noughtsAndCrosses.services.audio')
 
         .service('audioService', function($timeout, $document) {
 
