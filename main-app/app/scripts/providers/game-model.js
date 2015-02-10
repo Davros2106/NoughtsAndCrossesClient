@@ -57,7 +57,7 @@ angular.module('tombola.noughtsAndCrosses.providers.gameModel')
            if(this.winner === '1'){
                return this.winner;
            }
-           else if(this.outcome === 'draw'){
+           else if(this.outcome === 'Draw'){
                return('3');
            }
            else{
