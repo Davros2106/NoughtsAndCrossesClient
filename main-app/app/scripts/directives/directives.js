@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('tombola.noughtsAndCrosses')
+    angular.module('tombola.noughtsAndCrosses.directives')
 
         .directive('gameSquare', function () {
             return {
