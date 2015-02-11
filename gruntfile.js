@@ -6,6 +6,7 @@ var fileWatchTask = require('./../NoughtsAndCrosses/.grunt/filewatchertask.js');
 var lessTask = require('./../NoughtsAndCrosses/.grunt/lesstask.js');
 var expressTask = require('./server/server.js');
 var concatTask = require('./../NoughtsAndCrosses/.grunt/concatTask.js');
+var karmaTask = require('./../NoughtsAndCrosses/.grunt/karmaTask.js');
 
 module.exports = function(grunt) {
 
@@ -19,6 +20,7 @@ module.exports = function(grunt) {
         less: lessTask,
         server: expressTask,
         concat: concatTask,
+        karma: karmaTask,
 
     });
 
@@ -38,9 +40,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-karma');
 
 
-    grunt.registerTask('nostart',['jshint','clean:all','concat','copy','less' ]);
+    grunt.registerTask('nostart',['jshint','karma','clean:all','concat','copy','less' ]);
     grunt.registerTask('default',['nostart','server', 'watch']);
 };
 
