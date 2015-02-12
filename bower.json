@@ -1,0 +1,12 @@
+{
+  "name": "bower.json",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Davros2106/NoughtsAndCrossesClient",
+  "authors": [
+    "Davros2106"
+  ],
+  "dependencies": {
+    "angular": "~1.3.13",
+    "angular-mocks": "~1.3.13"
+  }
+}
