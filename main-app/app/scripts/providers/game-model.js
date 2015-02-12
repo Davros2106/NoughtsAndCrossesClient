@@ -2,14 +2,14 @@
         'use strict';
 angular.module('tombola.noughtsAndCrosses.providers.gameModel')
 
-.service('gameModel', function() {
+.service('gameModel', function(gameConstants) {
 
         this.outcome = 'continue';
-        this.gameboard = '000000000';
+        this.gameboard = gameConstants.startingGameboard;
         this.winner = 0;
         this.currentPlayer = 1;
-        this.player1Type = 'human';
-        this.player2Type = 'human';
+        this.player1Type = gameConstants.defaultPlayer1Type;
+        this.player2Type = gameConstants.defaultPlayer2Type;
 
 
         this.changeCurrentPlayer = function(){

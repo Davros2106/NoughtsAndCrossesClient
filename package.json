@@ -18,6 +18,7 @@
     "karma": "^0.12.31",
     "karma-chai-plugins": "^0.2.4",
     "karma-chai-sinon": "^0.1.4",
+    "karma-chrome-launcher": "^0.1.7",
     "karma-mocha": "^0.1.10",
     "karma-nyan-reporter": "0.0.50",
     "karma-phantomjs-launcher": "^0.1.4",

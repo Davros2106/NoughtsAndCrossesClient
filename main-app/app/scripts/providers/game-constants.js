@@ -4,12 +4,9 @@
 
         .constant('gameConstants',{
 
-                outcome:'continue',
-                gameboard:'000000000',
-                winner:0,
-                player1:'human',
-                player2:'random',
-                currentPlayer:1
+                startingGameboard:'000000000',
+                defaultPlayer1Type:'human',
+                defaultPlayer2Type:'random',
 
 
         });
