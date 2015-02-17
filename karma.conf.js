@@ -9,7 +9,7 @@ module.exports = function(config) {
 
         browsers: ['PhantomJS'],
 
-        frameworks: ['mocha','chai'],
+        frameworks: ['mocha','chai','sinon-chai'],
 
         logLevel: config.LOG_INFO,
 
