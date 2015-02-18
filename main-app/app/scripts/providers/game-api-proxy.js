@@ -2,7 +2,7 @@
     'use strict';
 angular.module('tombola.noughtsAndCrosses.providers.gameApiProxy')
 
-.service('gameApi',function($q, $http, gameModel) {
+.service('gameApiProxy',function($q, $http) {
 
 
     var GameApi = function () {
@@ -47,10 +47,10 @@ angular.module('tombola.noughtsAndCrosses.providers.gameApiProxy')
 
         };
 
-        this.makeMove = function (chosenSquare) {
+        this.makeMove = function (currentPlayer, chosenSquare) {
 
             return callService('http://eutaveg-01.tombola.emea:35000/api/v1.0/makeMove',
-                {'playerNumber': gameModel.currentPlayer, 'chosenSquare': chosenSquare});
+                {'playerNumber': currentPlayer, 'chosenSquare': chosenSquare});
 
         };
 
