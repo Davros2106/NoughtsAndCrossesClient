@@ -1,7 +1,7 @@
 var mocks = {
     httpConstants : {
-        newGameUrl: function() { },
-        makeMoveUrl: function() { }
+        newGameUrl: 'fakey new game url',
+        makeMoveUrl: 'fakey make move url'
     },
 
     gameConstants : {
@@ -9,5 +9,4 @@ var mocks = {
         defaultPlayer1Type: function () {  },
         defaultPlayer2Type: function () {  }
     }
-
 };

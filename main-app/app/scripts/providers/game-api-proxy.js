@@ -2,7 +2,7 @@
     'use strict';
 angular.module('tombola.noughtsAndCrosses.providers.gameApiProxy')
 
-.service('gameApiProxy',function($q, $http, $httpConstants) {
+.service('gameApiProxy',function($q, $http, httpConstants) {
 
 
     var GameApi = function () {
@@ -41,7 +41,7 @@ angular.module('tombola.noughtsAndCrosses.providers.gameApiProxy')
 
         this.newGame = function (player1Type, player2Type) {
 
-            return callService($httpConstants.newGameUrl,
+            return callService(httpConstants.newGameUrl,
                 {'player1': player1Type, 'player2': player2Type });
 
 
@@ -49,7 +49,7 @@ angular.module('tombola.noughtsAndCrosses.providers.gameApiProxy')
 
         this.makeMove = function (currentPlayer, chosenSquare) {
 
-            return callService($httpConstants.makeMoveUrl,
+            return callService(httpConstants.makeMoveUrl,
                 {'playerNumber': currentPlayer, 'chosenSquare': chosenSquare});
 
         };

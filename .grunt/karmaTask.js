@@ -9,7 +9,7 @@ module.exports = {
                   './main-app/app/scripts/controllers.js',
                   './main-app/app/scripts/providers/game-Api-Proxy.js',
                   './main-app/app/scripts/providers/constants/game-Constants.js',
-                  './main-app/app/scripts/providers/constants/$http-Constants.js',
+                  './main-app/app/scripts/providers/constants/http-constants.js',
                   './main-app/app/scripts/providers/game-Model.js',
                   './main-app/app/scripts/directives/directives.js',
                   './main-app/app/tests/mocks/*.js',

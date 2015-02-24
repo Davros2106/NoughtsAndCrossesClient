@@ -6,9 +6,6 @@
 
                 startingGameboard:'000000000',
                 defaultPlayer1Type:'human',
-                defaultPlayer2Type:'random',
-
-
+                defaultPlayer2Type:'random'
         });
-
 })();
