@@ -1,11 +1,13 @@
+var mocks = {
+    httpConstants : {
+        newGameUrl: function() { },
+        makeMoveUrl: function() { }
+    },
 
-           var MockGameConstants = {
+    gameConstants : {
+        startingGameboard: function () {  },
+        defaultPlayer1Type: function () {  },
+        defaultPlayer2Type: function () {  }
+    }
 
-                startingGameboard: function () {
-                },
-                defaultPlayer1Type: function () {
-                },
-                defaultPlayer2Type: function () {
-                }
-
-            };
+};

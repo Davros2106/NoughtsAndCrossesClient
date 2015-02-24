@@ -7,7 +7,7 @@ module.exports = function(config) {
 
         autoWatch: false,
 
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
 
         frameworks: ['mocha','chai','sinon-chai'],
 
@@ -19,7 +19,7 @@ module.exports = function(config) {
 
         colors: true,
 
-        singleRun: true,
+        singleRun: false,
 
     });
 
