@@ -5,10 +5,6 @@ module.exports = function(config) {
 
         basePath: '',
 
-        autoWatch: false,
-
-        browsers: ['PhantomJS'],
-
         frameworks: ['mocha','chai','sinon-chai'],
 
         logLevel: config.LOG_INFO,
@@ -19,7 +15,11 @@ module.exports = function(config) {
 
         colors: true,
 
+        browsers: ['PhantomJS'],
+
         singleRun: true,
+
+        autoWatch: true
 
     });
 

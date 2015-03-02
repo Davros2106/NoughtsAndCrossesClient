@@ -1,16 +1,16 @@
 (function () {
 angular.module('tombola.noughtsAndCrosses')
-    .controller('noughtsAndCrossesController', ['$scope','gameApi', 'gameModel','audioService', function ($scope,gameApi,gameModel,audioService){
+    .controller('noughtsAndCrossesController', ['$scope','gameApiProxy', 'gameModel','audioService', function ($scope,gameApiProxy,gameModel,audioService){
 
         $scope.gameModel = gameModel;
 
         $scope.newGame = function() {
-            updateGameModel(gameApi.newGame(gameModel.player1Type, gameModel.player2Type));
+            updateGameModel(gameApiProxy.newGame($scope.gameModel.player1Type, $scope.gameModel.player2Type));
             gameModel.startingPlayers();
         };
 
         $scope.makeMove = function (chosenSquare) {
-           updateGameModel(gameApi.makeMove(chosenSquare));
+           updateGameModel(gameApiProxy.makeMove($scope.gameModel.currentPlayer, chosenSquare));
             gameModel.changeCurrentPlayer();
             audioService.makeMove();
         };
