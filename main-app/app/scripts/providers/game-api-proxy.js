@@ -28,7 +28,7 @@ angular.module('tombola.noughtsAndCrosses.providers.gameApiProxy')
 
                 })
                 .error(function (data, status) {
-                    var response = ('data: ' + data) + ('status: ' + status);
+                    var response = ('data: ' + data + 'status: ' + status);
                     deferred.reject(response);
 
 
