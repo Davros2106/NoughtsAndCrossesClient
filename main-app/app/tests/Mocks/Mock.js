@@ -8,5 +8,17 @@ var mocks = {
         startingGameboard: function () {  },
         defaultPlayer1Type: function () {  },
         defaultPlayer2Type: function () {  }
+    },
+
+    gameModel: {
+        changeCurrentPlayer:  function (){  },
+        startingPlayers: function (){  },
+        updateModel: function (){  },
+        getResultSprite: function (){  }
+    },
+
+    gameApiProxy: {
+
+        callService: function (){}
     }
 };

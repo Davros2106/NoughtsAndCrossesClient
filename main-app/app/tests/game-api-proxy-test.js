@@ -22,23 +22,24 @@
 
      it('Start new game and set Human vs Human', function () {
 
-         $httpBackend.expectPOST(mocks.httpConstants.newGameUrl, {
-                 'player1': 'human',
-                 'player2': 'human'
+         $httpBackend.expectPOST(mocks.httpConstants.makeMoveUrl, {
+                 'playerNumber': '1',
+                 'chosenSquare': 0
             })
-            .respond({"outcome": "Win", "gameboard": "122110120", "winner": "1"});
+            .respond({"outcome":"Continue","gameboard":"102000000","winner":0});
 
-         gameApiProxy.newGame('human', 'human')
+         gameApiProxy.makeMove('1', 0)
              .then(function (data) {
-                 expect(data.gameboard).to.equal('122110120');
-                 expect(data.winner).to.equal('1');
-                 expect(data.outcome).to.equal('Win');
+                 expect(data.gameboard).to.equal('102000000');
+                 expect(data.winner).to.equal(0);
+                 expect(data.outcome).to.equal('Continue');
              })
              .catch( function(data){
                 assert.fail('Unexpected bad response from back end' + data);
             });
          $httpBackend.flush();
      });
+
 
 
 
