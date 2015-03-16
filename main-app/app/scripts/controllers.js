@@ -12,7 +12,7 @@ angular.module('tombola.noughtsAndCrosses')
         $scope.makeMove = function (chosenSquare) {
            updateGameModel(gameApiProxy.makeMove($scope.gameModel.currentPlayer, chosenSquare));
             gameModel.changeCurrentPlayer();
-            audioService.audioMakeMove();
+            audioService.makeMove();
         };
 
         var updateGameModel = function(promise){

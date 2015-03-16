@@ -69,7 +69,7 @@
                 .once();
 
             audioServiceMock
-                .expects('audioMakeMove')
+                .expects('makeMove')
                 .once();
 
 

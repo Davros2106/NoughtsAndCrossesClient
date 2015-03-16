@@ -33,7 +33,7 @@
 
             };
 
-               me.audioMakeMove = function() {
+               me.makeMove = function() {
 
                    playSprite(0, 3000);
             };
