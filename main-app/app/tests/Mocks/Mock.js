@@ -19,6 +19,15 @@ var mocks = {
 
     gameApiProxy: {
 
-        callService: function (){}
+        newGame: function(){},
+        makeMove: function (){}
+
+    },
+
+    audioService: {
+
+        audioSprite: function(){},
+        makeMove: function() {}
+
     }
 };
