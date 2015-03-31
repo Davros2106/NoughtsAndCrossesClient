@@ -2,12 +2,14 @@
     'use strict';
     angular.module('tombola.noughtsAndCrosses.providers.audio')
 
-        .service('audioService', function($timeout, $document) {
+        .factory('audioService', function($timeout, $document) {
 
-            var me = this;
+            var audioFactory = {};
             var audioSprite;
+            var me = this;
 
-            var setUpSprite = function(){
+
+            audioFactory.setUpSprite = function(){
 
                 var document = $document[0];
                 audioSprite = document.createElement('audio');
@@ -19,26 +21,30 @@
                 audioSprite.appendChild(source);
                 document.body.appendChild(audioSprite);
 
+
             };
 
-            var playSprite = function(startTime, duration){
+
+            audioFactory.playSprite = function(startTime, duration){
                 audioSprite.currentTime = startTime;
                 $timeout(callAtTimeout, duration);
 
                 function callAtTimeout() {
+
                     audioSprite.pause();
+
                 }
 
                 audioSprite.play();
+            };
+
+               audioFactory.makeMove = function() {
+
+                   audioFactory.playSprite(0, 3000);
 
             };
 
-               me.makeMove = function() {
-
-                   playSprite(0, 3000);
-            };
-
-          setUpSprite();
+           return audioFactory;
 
         });
 })();
