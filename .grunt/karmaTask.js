@@ -8,6 +8,8 @@ module.exports = {
                   './main-app/app/scripts/modules.js',
                   './main-app/app/scripts/controllers.js',
                   './main-app/app/scripts/providers/game-Api-Proxy.js',
+                  './main-app/app/scripts/providers/audio/audio-sprite.js',
+                  './main-app/app/scripts/providers/audio/audio-service.js',
                   './main-app/app/scripts/providers/constants/game-Constants.js',
                   './main-app/app/scripts/providers/constants/http-constants.js',
                   './main-app/app/scripts/providers/game-Model.js',
