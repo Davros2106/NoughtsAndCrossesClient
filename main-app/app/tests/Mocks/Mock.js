@@ -26,8 +26,6 @@ var mocks = {
 
     audioService: {
 
-        audioSprite: function(){},
         makeMove: function() {}
 
-    }
-};
+}};
