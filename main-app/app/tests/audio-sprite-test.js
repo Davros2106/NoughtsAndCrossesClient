@@ -1,20 +1,20 @@
 (function () {
     'use strict';
-    describe('Testing the audioService', function () {
+    describe('Testing the AudioService', function () {
         var $timeout;
         var $document;
-        var audioSprite;
+        var AudioSprite;
         var audioElement;
         beforeEach(function () {
-            module('tombola.noughtsAndCrosses.providers.audio');
+            module('Tombola.NoughtsAndCrosses.Providers.audio');
             inject(function ($injector) {
                 $timeout = $injector.get('$timeout');
                 $document = $injector.get('$document');
-                audioSprite = $injector.get('AudioSprite');
+                AudioSprite = $injector.get('AudioSprite');
             });
         });
         it("Making sure audio Element is being created correctly.", function () {
-            var mySprite = new audioSprite('SourceUrl', 'SourceType');
+            var mySprite = new AudioSprite('SourceUrl', 'SourceType');
             var doc = $document[0];
             var body = doc.body;
             var lastElement = body.children[body.children.length - 1];

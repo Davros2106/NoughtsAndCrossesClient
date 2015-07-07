@@ -2,7 +2,7 @@
     describe('Game-square tests', function () {
         var compile,
             rootScope;
-        beforeEach(module('tombola.noughtsAndCrosses.directives'));
+        beforeEach(module('Tombola.NoughtsAndCrosses.directives'));
         beforeEach(inject(function ($compile, $rootScope) {
             compile = $compile;
             rootScope = $rootScope;

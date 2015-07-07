@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('tombola.noughtsAndCrosses.directives')
+    angular.module('Tombola.NoughtsAndCrosses.directives')
         .directive('gameSquare', function () {
             return {
                 restrict: 'E',
@@ -15,7 +15,7 @@
                 restrict: 'E',
                 replace: true,
                 template: function () {
-                    return '<div class="resultDisplay showResult{{gameModel.getResultSprite()}}">';
+                    return '<div class="resultDisplay showResult{{GameModel.getResultSprite()}}">';
                 }
             };
         });

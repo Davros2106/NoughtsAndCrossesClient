@@ -1,37 +1,36 @@
 (function () {
     'use strict';
-
     describe('Testing the controller', function () {
         var scope,
             controller,
             sandbox,
             q,
-            gameModelMock,
-            audioServiceMock;
-        beforeEach(module('tombola.noughtsAndCrosses'));
+            GameModelMock,
+            AudioServiceMock;
+        beforeEach(module('Tombola.NoughtsAndCrosses'));
         beforeEach(inject(function ($rootScope, $controller, $q) {
             q = $q;
             sandbox = sinon.sandbox.create();
-            gameModelMock = sinon.sandbox.mock(mocks.gameModel);
-            audioServiceMock = sinon.sandbox.mock(mocks.audioService);
+            GameModelMock = sinon.sandbox.mock(mocks.GameModel);
+            AudioServiceMock = sinon.sandbox.mock(mocks.AudioService);
             scope = $rootScope.$new();
             controller = $controller('noughtsAndCrossesController', {
                 $scope: scope,
-                gameModel: mocks.gameModel,
-                gameApiProxy: mocks.gameApiProxy,
-                audioService: mocks.audioService
+                GameModel: mocks.gameModel,
+                GameApiProxy: mocks.GameApiProxy,
+                AudioService: mocks.AudioService
             });
         }));
         it('Check reset calls the newGame function', function () {
             var testResult = {winner: '2', gameboard: '22222222'};
-            mocks.gameApiProxy.newGame = function () {
+            mocks.GameApiProxy.newGame = function () {
                 return q.when(testResult);
             };
-            gameModelMock
+            GameModelMock
                 .expects('updateModel')
                 .withArgs(testResult)
                 .once();
-            gameModelMock
+            GameModelMock
                 .expects('startingPlayers')
                 .once();
             scope.newGame();
@@ -39,28 +38,26 @@
         it('Check reset calls the makeMove function', function () {
             var testResult = {winner: '0', gameboard: '100000000'};
 
-            mocks.gameApiProxy.makeMove = function () {
+            mocks.GameApiProxy.makeMove = function () {
                 return q.when(testResult);
             };
-            gameModelMock
+            GameModelMock
                 .expects('updateModel')
                 .withArgs(testResult)
                 .once();
-            gameModelMock
+            GameModelMock
                 .expects('changeCurrentPlayer')
                 .once();
-            audioServiceMock
+            AudioServiceMock
                 .expects('makeMove')
                 .once();
             scope.makeMove();
         });
         afterEach(function () {
             scope.$digest();
-            gameModelMock.verify();
-            audioServiceMock.verify();
+            GameModelMock.verify();
+            AudioServiceMock.verify();
             sandbox.restore();
         });
-
     });
-
 })();

@@ -1,26 +1,25 @@
 (function () {
     'use strict';
-
     describe('Testing the Game-Api-Proxy', function () {
         var $httpBackend,
-            gameApiProxy;
+            GameApiProxy;
         beforeEach(function () {
-            module('tombola.noughtsAndCrosses.providers.gameApiProxy');
+            module('Tombola.NoughtsAndCrosses.Providers.gameApiProxy');
             module(function ($provide) {
-                $provide.constant('httpConstants', mocks.httpConstants);
+                $provide.constant('HTTP_CONSTANTS', mocks.HTTP_CONSTANTS);
             });
             inject(function ($injector) {
                 $httpBackend = $injector.get('$httpBackend');
-                gameApiProxy = $injector.get('gameApiProxy');
+                GameApiProxy = $injector.get('gameApiProxy');
             });
         });
         it('Start new game and set Human vs Human', function () {
-            $httpBackend.expectPOST(mocks.httpConstants.makeMoveUrl, {
+            $httpBackend.expectPOST(mocks.HTTP_CONSTANTS.makeMoveUrl, {
                 'playerNumber': '1',
                 'chosenSquare': 0
             })
                 .respond({"outcome": "Continue", "gameboard": "102000000", "winner": 0});
-            gameApiProxy.makeMove('1', 0)
+            GameApiProxy.makeMove('1', 0)
                 .then(function (data) {
                     expect(data.gameboard).to.equal('102000000');
                     expect(data.winner).to.equal(0);

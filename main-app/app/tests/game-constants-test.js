@@ -4,9 +4,9 @@
         constants;
     describe('Ensure initial constants are correct', function () {
         beforeEach(function () {
-            module('tombola.noughtsAndCrosses.providers.gameModel');
+            module('Tombola.NoughtsAndCrosses.Providers.gameModel');
             inject(function ($injector) {
-                constants = $injector.get('gameConstants')
+                constants = $injector.get('GAME_CONSTANTS')
             });
         });
         it('Ensure initial startingGameboard is correct', function () {

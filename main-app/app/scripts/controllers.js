@@ -1,26 +1,25 @@
 (function () {
-    angular.module('tombola.noughtsAndCrosses')
-        .controller('noughtsAndCrossesController',
-        ['$scope', 'gameApiProxy', 'gameModel', 'audioService', function ($scope, gameApiProxy, gameModel,
-                                                                          audioService) {
-            $scope.gameModel = gameModel;
+    angular.module('Tombola.NoughtsAndCrosses')
+        .controller('NoughtsAndCrossesController',
+        ['$scope', 'GameApiProxy', 'GameModel', 'AudioService', function ($scope, GameApiProxy, GameModel,
+                                                                          AudioService) {
+            $scope.GameModel = GameModel;
 
             $scope.newGame = function () {
-                updateGameModel(gameApiProxy.newGame($scope.gameModel.player1Type, $scope.gameModel.player2Type));
-                gameModel.startingPlayers();
+                updateGameModel(GameApiProxy.newGame($scope.GameModel.player1Type, $scope.GameModel.player2Type));
+                GameModel.startingPlayers();
             };
             $scope.makeMove = function (chosenSquare) {
-                updateGameModel(gameApiProxy.makeMove($scope.gameModel.currentPlayer, chosenSquare));
-                gameModel.changeCurrentPlayer();
-                audioService.makeMove();
+                updateGameModel(GameApiProxy.makeMove($scope.GameModel.currentPlayer, chosenSquare));
+                GameModel.changeCurrentPlayer();
+                AudioService.makeMove();
             };
             var updateGameModel = function (promise) {
                 promise.then(function (data) {
-                    $scope.gameModel.updateModel(data);
+                    $scope.GameModel.updateModel(data);
                 }, function () {
                     console.log('ERROR');
                 });
             };
-
         }]);
 })();

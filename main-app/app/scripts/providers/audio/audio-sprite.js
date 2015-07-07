@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('tombola.noughtsAndCrosses.providers.audio')
+    angular.module('Tombola.NoughtsAndCrosses.Providers.audio')
         .factory('AudioSprite', function ($timeout, $document) {
             return function (source, sourceType) {
                 var me = this,

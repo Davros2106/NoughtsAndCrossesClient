@@ -1,9 +1,9 @@
 var mocks = {
-    httpConstants: {
+    HTTP_CONSTANTS: {
         newGameUrl: 'fakey new game url',
         makeMoveUrl: 'fakey make move url'
     },
-    gameConstants: {
+    GAME_CONSTANTS: {
         startingGameboard: function () {
         },
         defaultPlayer1Type: function () {
@@ -11,7 +11,7 @@ var mocks = {
         defaultPlayer2Type: function () {
         }
     },
-    gameModel: {
+    GameModel: {
         changeCurrentPlayer: function () {
         },
         startingPlayers: function () {
@@ -21,13 +21,13 @@ var mocks = {
         getResultSprite: function () {
         }
     },
-    gameApiProxy: {
+    GameApiProxy: {
         newGame: function () {
         },
         makeMove: function () {
         }
     },
-    audioService: {
+    AudioService: {
         makeMove: function () {
         }
     }
