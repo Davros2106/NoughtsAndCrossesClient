@@ -14,9 +14,9 @@
             GameModelMock = sinon.sandbox.mock(mocks.GameModel);
             AudioServiceMock = sinon.sandbox.mock(mocks.AudioService);
             scope = $rootScope.$new();
-            controller = $controller('noughtsAndCrossesController', {
+            controller = $controller('NoughtsAndCrossesController', {
                 $scope: scope,
-                GameModel: mocks.gameModel,
+                GameModel: mocks.GameModel,
                 GameApiProxy: mocks.GameApiProxy,
                 AudioService: mocks.AudioService
             });

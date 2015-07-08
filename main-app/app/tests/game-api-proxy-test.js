@@ -10,7 +10,7 @@
             });
             inject(function ($injector) {
                 $httpBackend = $injector.get('$httpBackend');
-                GameApiProxy = $injector.get('gameApiProxy');
+                GameApiProxy = $injector.get('GameApiProxy');
             });
         });
         it('Start new game and set Human vs Human', function () {
