@@ -17,7 +17,7 @@
                 promise.then(function (data) {
                     $scope.GameModel.updateModel(data);
                 }, function () {
-                    console.log('ERROR');
+                    alert('ERROR');
                 });
             };
         }]);
