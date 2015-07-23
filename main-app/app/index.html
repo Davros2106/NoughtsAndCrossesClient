@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="Tombola.NoughtsAndCrosses">
 <head>
-
     <title>Noughts and Crosses</title>
-    <script src="/angular/angular.js"></script>
-    <link rel="stylesheet" type="text/css" href=".build/import.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/import.css">
 </head>
-
 <body ng-controller="NoughtsAndCrossesController">
 <img src="/images/text.png">
 <div id="contentContainer">
-
     <div id="wrapper">
             <div>
                 <game-square cellnumber="0"></game-square>
@@ -32,51 +29,31 @@
 </div>
 <aside>
     <button ng-click="newGame()">New Game</button>
-
 <div class="selection">
-
     <h2>Current Number {{GameModel.currentPlayer}}</h2>
-
 </div>
-
 <div class="selection">
-
     <h2>ARNIE! :  {{GameModel.player1Type}}</h2>
-
     <select ng-model="GameModel.player1Type">
-
         <option value="human">Human</option>
         <option value="random">Random</option>
         <option value="pre-trained">pre-trained</option>
-
     </select>
-
 </div>
-
 <div class="selection">
-
     <h2>T-800 Terminator : {{GameModel.player2Type}}</h2>
-
     <select ng-model="GameModel.player2Type">
-
         <option value="human">Human</option>
         <option value="random">Random</option>
         <option value="pre-trained">pre-trained</option>
-
     </select>
-
 </div>
-
     <game-result></game-result>
-
 </aside>
 </div>
-
     <script src="scripts/built.js"></script>
-
 <audio autoplay loop>
     <source src="/audio/Background.mp3" type="audio/mpeg">
 </audio>
-
 </body>
 </html>
