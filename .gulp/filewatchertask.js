@@ -58,7 +58,7 @@ module.exports =  {
     },
 
     audio: {
-            files:'main-app/app/sounds/*.*',
+            files:'main-app/app/audio/*.*',
             tasks:['clean:audio','copy:audio'],
             options:{
             spawn:false
