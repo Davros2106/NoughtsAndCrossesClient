@@ -10,14 +10,14 @@ module.exports =  {
 
     file: {
         cwd: '',
-        src: '.grunt/*.js',
+        src: '.gulp/*.js',
         dest: '.build/',
         expand: true
     },
 
     grunt: {
         cwd: '',
-        src: 'gruntfile.js',
+        src: 'gulpfile.js',
         dest: '.build/',
         expand: true
     },

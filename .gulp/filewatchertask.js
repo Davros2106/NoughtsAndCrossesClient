@@ -18,7 +18,7 @@ module.exports =  {
     },
 
     grunt:{
-        files:'.grunt/*.js',
+        files:'.gulp/*.js',
         tasks:['nostart'],
         options:{
             spawn:false
