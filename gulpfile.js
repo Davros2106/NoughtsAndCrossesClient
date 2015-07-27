@@ -11,8 +11,8 @@ var gulp = require('gulp'),
     minifyCSS = require('gulp-minify-css');
 
 gulp.task('unit', ['jshint', 'unit-tests']);
-gulp.task('nostart', ['unit', 'clean', 'concat', 'copy','less']);
-gulp.task('default', ['nostart', 'express','watch']);
+gulp.task('nostart', ['unit', 'clean', 'concat', 'copy', 'less']);
+gulp.task('default', ['nostart', 'express', 'watch']);
 gulp.task('jshint', function () {
     return gulp.src('main-app/app/scripts/*.js')
         .pipe(jshint())
@@ -37,11 +37,13 @@ gulp.task('concat', function () {
         .pipe(gulp.dest('.build/main-app/app/scripts'));
 });
 gulp.task('clean', function () {
-    gulp.src([
+    gulp.src(['.build/',
         '.build/main-app/app/scripts',
         '.build/main-app/app/images',
         '.build/main-app/app/css',
-        '.build/main-app/app/index.html'])
+        '.build/main-app/app/index.html',
+        '.build/main-app/app/audio'
+    ])
         .pipe(clean());
 });
 gulp.task('less', function () {
@@ -84,10 +86,10 @@ gulp.task('express', function () {
     module.exports = server;
 });
 gulp.task('watch', function () {
-    gulp.watch('main-app/app/scripts/*.js', ['jshint', 'concat', 'clean']);
-    gulp.watch('main-app/app/images/*.*', ['clean', 'copy']);
-    gulp.watch('main-app/app/less/*.*', ['clean', 'less']);
+    gulp.watch('main-app/app/scripts/**/*.js', ['jshint', 'concat', 'clean']);
+    gulp.watch('main-app/app/images/**', ['clean', 'copy']);
+    gulp.watch('main-app/app/less/**', ['clean', 'less']);
     gulp.watch('main-app/app/index.html', ['clean', 'copy']);
-    gulp.watch('main-app/app/audio/*.*', ['clean', 'copy']);
+    gulp.watch('main-app/app/audio/**', ['clean', 'copy']);
     return gutil.log('gulp-watch is running')
 });
