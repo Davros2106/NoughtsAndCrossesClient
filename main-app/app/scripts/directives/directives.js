@@ -6,7 +6,7 @@
                 restrict: 'E',
                 replace: true,
                 template: function (scope, attr) {
-                    return '<div class="gameCell showImg{{gameModel.gameboard[' + attr.cellnumber + ']}}" ng-click="makeMove(' + attr.cellnumber + ')">';
+                    return '<div class="gameCell showImg{{GameModel.gameboard[' + attr.cellnumber + ']}}" ng-click="makeMove(' + attr.cellnumber + ')">';
                 }
             };
         })

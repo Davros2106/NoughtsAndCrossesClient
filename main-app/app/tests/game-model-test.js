@@ -9,7 +9,7 @@
                 $provide.value('GAME_CONSTANTS');
             });
             inject(function ($injector) {
-                GameModel = $injector.get('gameModel');
+                GameModel = $injector.get('GameModel');
             });
         });
         it('Testing a human vs human game with changeCurrentPlayer() ', function () {

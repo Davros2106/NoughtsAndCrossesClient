@@ -11,13 +11,11 @@
                 sourceElement.type = sourceType;
                 audioElement.appendChild(sourceElement);
                 document.body.appendChild(audioElement);
-
                 this.playSprite = function (startTime, duration) {
                     audioElement.currentTime = startTime;
                     $timeout(callAtTimeout, duration);
                     function callAtTimeout() {
                         audioElement.pause();
-                        console.log('foo');
                     }
 
                     audioElement.play();
